@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+  <title>NDP API TEST TOOL</title>
+</head>
+<body>
+<h1> NDP Stress Test 페이지 </h1>
+<p> 조회할 정보를 선택해주세요.</p>
+<form th:action="@{/loading}" method="post">
+  <select name="subject">
+    <option th:each="subjectOpt : ${T(com.ndptest.tool.Subject).values()}" th:value="${subjectOpt}" th:text="${subjectOpt.displayString}">
+    </option>
+  </select>
+  <input  type="submit" value="테스트 시작">
+</form>
+
+</body>
+</html>

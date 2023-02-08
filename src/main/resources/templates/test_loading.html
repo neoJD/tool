@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading...</title>
+</head>
+<body>
+<h1 th:text="|${subject} 조회 테스트 결과 로딩중|"></h1>
+<form th:action="@{/result}" method="post">
+    <input  type="submit" value="결과 보기">
+</form>
+
+</body>
+</html>

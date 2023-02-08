@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST RESULT</title>
+</head>
+<body>
+<h1 th:text="|${subject} 조회 테스트 결과|"></h1>
+<table>
+  <thead>
+  <tr>
+    <th>No.</th>
+    <th>사용자명</th>
+    <th>응답 시간</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="result : ${testResultList}">
+    <td th:text="${result.number}"></td>
+    <td th:text="${result.username}"></td>
+    <td th:text="${result.responseTime}"></td>
+  </tr>
+  </tbody>
+</table>
+<form th:action="@{/returnToMain}" method="post">
+  <input  type="submit" value="데이터 삭제 후 메인으로 돌아가기">
+</form>
+
+</body>
+</html>
